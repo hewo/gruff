@@ -974,7 +974,7 @@ module Gruff
       elsif value == value.to_i
         label = value.to_i.to_s
       else
-        label if @spread > 10.0
+        label = if @spread > 10.0
           sprintf("%0i", value)
         elsif @spread >= 3.0
           sprintf("%0.2f", value)
