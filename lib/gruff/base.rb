@@ -974,9 +974,7 @@ module Gruff
       elsif value == value.to_i
         label = value.to_i.to_s
       else
-        label = if (@spread.to_f % @marker_count.to_f == 0) || !@y_axis_increment.nil?
-          value.to_i.to_s
-        elsif @spread > 10.0
+        label if @spread > 10.0
           sprintf("%0i", value)
         elsif @spread >= 3.0
           sprintf("%0.2f", value)
